@@ -1,0 +1,204 @@
+/* style.css — Cool Neon (Electric Blue) Theme */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+    font-family: "Inter", Helvetica, sans-serif;
+    background-color: #0d0d1a;
+    color: #00eaff;
+}
+
+/* Layout Centering */
+main {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+/* Container */
+.container {
+    width: 60vw;
+    min-height: 280px;
+    background-color: rgb(6, 6, 34);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 1rem;
+    padding: 2.5rem;
+    box-shadow: 0 0 25px rgba(0, 234, 255, 0.15);
+    transition: all 0.3s ease;
+}
+
+.container:hover {
+    box-shadow: 0 0 35px rgba(0, 234, 255, 0.25);
+}
+
+/* Title */
+h1 {
+    font-size: clamp(1.4rem, 2.5vw, 1.8rem);
+    margin-bottom: 1.8rem;
+    color: #00eaff;
+    text-shadow: 0 0 10px rgba(0, 234, 255, 0.7);
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+/* Quote Box */
+.quote {
+    background-color: rgb(10, 10, 45);
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.8rem;
+    box-shadow: inset 0 0 20px rgba(0, 234, 255, 0.1);
+    border-left: 3px solid #00eaff;
+    margin-bottom: 2rem;
+    transition: all 0.3s ease;
+}
+
+.quote p {
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+    color: #b3f8ff;
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    text-shadow: 0 0 6px rgba(0, 234, 255, 0.3);
+}
+
+/* Author and Category info */
+.bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+    color: #7be9ff;
+    opacity: 0.9;
+    border-top: 1px solid rgba(0, 234, 255, 0.1);
+    padding-top: 0.6rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.bottom h5 {
+    font-weight: 500;
+    text-transform: capitalize;
+    text-shadow: 0 0 5px rgba(0, 234, 255, 0.4);
+}
+
+span {
+    color: rgb(255, 255, 0);
+}
+
+/* Generate Button */
+button {
+    background-color: #00eaff;
+    color: #0d0d1a;
+    font-weight: bold;
+    border: none;
+    border-radius: 0.4rem;
+    padding: 0.8rem 1.8rem;
+    cursor: pointer;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 234, 255, 0.3);
+}
+
+button:hover {
+    background-color: #33f5ff;
+    box-shadow: 0 0 25px rgba(0, 234, 255, 0.6);
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.container button {
+    margin-top: 0.5rem;
+}
+
+/* --- Responsive Adjustments --- */
+
+/* Tablets */
+@media (max-width: 992px) {
+    .container {
+        width: 75vw;
+        padding: 2rem;
+    }
+
+    .quote {
+        padding: 1.2rem;
+    }
+
+    .bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+    }
+}
+
+/* Mobile screens */
+@media (max-width: 600px) {
+    main {
+        align-items: flex-start;
+        padding-top: 3rem;
+    }
+
+    .container {
+        width: 90vw;
+        min-height: auto;
+        padding: 1.5rem;
+        border-radius: 0.8rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+        text-align: center;
+    }
+
+    .quote {
+        padding: 1rem;
+        border-left: 2px solid #00eaff;
+        box-shadow: inset 0 0 10px rgba(0, 234, 255, 0.08);
+    }
+
+    .bottom {
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: 0.85rem;
+        gap: 0.4rem;
+    }
+
+    .container button {
+        width: 100%;
+        margin: 0.5rem 0;
+    }
+}
+
+/* Very small devices */
+@media (max-width: 400px) {
+    .container {
+        padding: 1rem;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    .quote p {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+
+    button {
+        padding: 0.6rem 1.2rem;
+    }
+}
