@@ -1,0 +1,197 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* BACKGROUND + LAYOUT */
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle at 20% 30%, #0a0f1f 0%, #06080f 100%);
+    color: #f5f5f5;
+    overflow: hidden;
+}
+
+/* MAIN CARD */
+.container {
+    background: rgba(20, 25, 40, 0.9);
+    border: 1px solid rgba(0, 255, 255, 0.1);
+    box-shadow: 0 0 25px rgba(0, 255, 255, 0.05),
+        0 0 60px rgba(255, 0, 255, 0.1);
+    border-radius: 20px;
+    padding: 50px 60px;
+    width: 440px;
+
+    text-align: center;
+    backdrop-filter: blur(15px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* TITLE */
+h1 {
+    font-size: 2rem;
+    letter-spacing: 1px;
+    margin-bottom: 30px;
+    color: #00e5ff;
+    text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
+}
+
+/* INPUT FIELD */
+input[type="text"] {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1.5px solid rgba(0, 255, 255, 0.3);
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    background: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #888;
+}
+
+input[type="text"]:focus {
+    border-color: #ff00ff;
+    box-shadow: 0 0 10px rgba(255, 0, 255, 0.4);
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    margin-top: 20px;
+    padding: 14px;
+    background: linear-gradient(135deg, #00ffff, #ff00ff);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0 15px rgba(0, 255, 255, 0.6), 0 0 25px rgba(255, 0, 255, 0.4);
+}
+
+/* ERROR TEXT */
+.error {
+    color: #ff4d6d;
+    font-size: 0.9rem;
+    margin-top: 8px;
+    min-height: 18px;
+}
+
+/* WEATHER DETAILS BOX — WITH TRANSITIONS */
+.weather_details {
+    margin-top: 30px;
+    text-align: left;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px 20px;
+    border-radius: 15px;
+    line-height: 1.8;
+    border: 1px solid rgba(0, 255, 255, 0.1);
+
+    /* NEW: smooth show/hide transition */
+    opacity: 1;
+    max-height: 800px;
+    transform: translateY(0);
+    transition: opacity 0.4s ease, transform 0.4s ease, max-height 0.6s ease;
+    overflow: hidden;
+}
+
+/* When hidden, fade out + slide up */
+.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    max-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+}
+
+/* CITY NAME */
+.cityName {
+    font-size: 1.6rem;
+    color: #00ffff;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(0, 255, 255, 0.4);
+}
+
+/* TEMPERATURE VALUES */
+.temp_C,
+.temp_F {
+    color: #fff;
+    font-weight: 600;
+}
+
+/* WEATHER CONDITION LINE */
+.condition-wrapper {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    vertical-align: middle;
+}
+
+.condition {
+    color: #ffbdf7;
+    font-weight: 500;
+}
+
+/* WEATHER ICON */
+.weather-img {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.weather-img img {
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+    display: block;
+    filter: drop-shadow(0 0 5px rgba(255, 0, 255, 0.6));
+}
+
+/* ANIMATION (fade-in when loaded) */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 480px) {
+    .container {
+        width: 90%;
+        padding: 35px 25px;
+        min-height: auto;
+    }
+
+    h1 {
+        font-size: 1.7rem;
+    }
+
+    .weather-img img {
+        width: 40px;
+        height: 40px;
+    }
+}

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Open Weather</title>
+        <link rel="stylesheet" href="style.css" />
+        <link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+    </head>
+    <body>
+        <main>
+            <div class="container">
+                <h1>Open Weather</h1>
+
+                <input
+                    type="text"
+                    placeholder="Enter City Name"
+                    id="cityInput"
+                />
+                <p class="error"></p>
+                <button id="btn">Search</button>
+
+                <div class="weather_details hidden">
+                    <h3 class="cityName"></h3>
+                    <p>
+                        Temperature :
+                        <span class="temp_C"></span>/
+                        <span class="temp_F"></span>
+                    </p>
+                    <p>
+                        Weather Condition :
+                        <span class="condition-wrapper">
+                            <span class="condition"></span>
+                            <span class="weather-img">
+                                <img src="" alt="weather-img" />
+                            </span>
+                        </span>
+                    </p>
+                    <p>
+                        Wind direction : <span class="wind_dir"></span> /
+                        <span class="wind_degree"></span>
+                    </p>
+                    <p>Humidity : <span class="humidity"></span></p>
+                </div>
+            </div>
+        </main>
+        <script src="script.js"></script>
+    </body>
+</html>
