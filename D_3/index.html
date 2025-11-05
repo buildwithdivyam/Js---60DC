@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Joke App</title>
+    <link
+            href="https://cdn.jsdelivr.net/npm/remixicon@4.7.0/fonts/remixicon.css"
+            rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="container">
+    <div class="nav">
+        <h1 class="logo">CrazyJokes</h1>
+        <div class="menu"><i class="ri-menu-fill"></i></div>
+    </div>
+    <div class="nav-items">
+        <div class="category">
+            <h3>Category:</h3>
+            <label><input type="checkbox" name="category" value="random"> random</label>
+            <label><input type="checkbox" name="category" value="programming"> programming</label>
+            <label><input type="checkbox" name="category" value="misc"> misc</label>
+            <label><input type="checkbox" name="category" value="dark"> dark</label>
+            <label><input type="checkbox" name="category" value="pun"> pun</label>
+            <label><input type="checkbox" name="category" value="spooky"> spooky</label>
+            <label><input type="checkbox" name="category" value="christmas"> christmas</label>
+        </div>
+        <div class="blacklist">
+            <h3>Blacklist Flags:</h3>
+            <label><input type="checkbox" name="flags" value="nsfw"> nsfw</label>
+            <label><input type="checkbox" name="flags" value="sexist"> sexist</label>
+            <label><input type="checkbox" name="flags" value="racist"> racist</label>
+            <label><input type="checkbox" name="flags" value="political"> political</label>
+            <label><input type="checkbox" name="flags" value="religious"> religious</label>
+            <label><input type="checkbox" name="flags" value="explicit"> explicit</label>
+        </div>
+    </div>
+    <ul class="ul-container">
+
+<!--        <li>-->
+<!--            <span class="copy-btn" title="Copy">-->
+<!--                <i class="ri-clipboard-line"></i>-->
+<!--            </span>-->
+<!--            <p class="joke-text">joke1</p>-->
+<!--            <p class="li-category">-->
+<!--                <span>category</span>-->
+<!--                <span>category</span>-->
+<!--                <span>category</span>-->
+<!--                <span>category</span>-->
+<!--            </p>-->
+<!--        </li>-->
+
+    </ul>
+
+    <div class="footer">
+        <div class="pagination">
+            <button id="prev"><i class="ri-arrow-left-line"></i></button>
+            <span id="page-info"></span>
+            <button id="next"><i class="ri-arrow-right-line"></i></button>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>

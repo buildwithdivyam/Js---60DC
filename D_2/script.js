@@ -21,15 +21,13 @@ cityInput.addEventListener("keypress", (e) => {
 
 async function getWeather(cityName) {
     const apiKey = "5c052100e75b4e3a9aa121333250211";
-    const baseUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${encodeURIComponent(
-        cityName
-    )}&aqi=no`;
+    const baseUrl = `https://api.weatherapi.com/v1/current.json?key=${apiKey}&q=${encodeURIComponent(cityName)}&aqi=no`;
     try {
         const res = await fetch(baseUrl);
-        if (!res.ok) throw new Error(`HTTP error: ${res.status}`);
+        if (!res.ok) return new Error(`HTTP error: ${res.status}`);
         return await res.json();
     } catch (error) {
-        return { error: { message: error.message } };
+        return {error: {message: error.message}};
     }
 }
 

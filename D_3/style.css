@@ -1,0 +1,291 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* BODY */
+body {
+    background: radial-gradient(circle at top left, #0f0f1a, #06060d 80%);
+    color: #f0f0f0;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 30px;
+}
+
+/* CONTAINER */
+.container {
+    background: rgba(255, 255, 255, 0.05);
+    width: 90%;
+    max-width: 900px;
+    border-radius: 16px;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.5);
+    padding: 20px 25px;
+    backdrop-filter: blur(8px);
+}
+
+/* NAVBAR */
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+}
+
+.logo {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: #00d9ff;
+    letter-spacing: 1px;
+}
+
+/* MENU BUTTON */
+.menu {
+    font-size: 1.6rem;
+    cursor: pointer;
+    color: #fff;
+    display: block; /* visible on all devices */
+}
+
+/* NAV ITEMS (Hidden by default, shown when active) */
+.nav-items {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    animation: slideDown 0.3s ease forwards;
+}
+
+.nav-items.active {
+    display: flex;
+}
+
+/* CATEGORY + BLACKLIST SECTIONS */
+.category, .blacklist {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 0;
+}
+
+.category h3, .blacklist h3 {
+    color: #ffcc00;
+    font-size: 1rem;
+    white-space: nowrap;
+    margin-right: 10px;
+}
+
+/* LABELS */
+.category label,
+.blacklist label {
+    display: flex;
+    align-items: center;
+    font-size: 0.85rem;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 6px 10px;
+    border-radius: 8px;
+    transition: 0.2s;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+/* HOVER EFFECT */
+.category label:hover,
+.blacklist label:hover {
+    background: rgba(0, 217, 255, 0.15);
+    color: #00d9ff;
+}
+
+/* ✅ HIGHLIGHT SELECTED CHECKBOXES (modern CSS :has()) */
+.category label:has(input[type="checkbox"]:checked),
+.blacklist label:has(input[type="checkbox"]:checked) {
+    background: rgba(0, 217, 255, 0.25);
+    color: #00d9ff;
+    border-color: #00d9ff;
+    box-shadow: 0 0 8px rgba(0, 217, 255, 0.4);
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+/* CHECKBOXES */
+input[type="checkbox"] {
+    margin-right: 6px;
+    accent-color: #00d9ff;
+}
+
+/* JOKE LIST */
+.ul-container {
+    list-style: none;
+    margin-top: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.ul-container li {
+    background: rgba(255, 255, 255, 0.07);
+    padding: 12px 16px;
+    border-radius: 10px;
+    transition: 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.ul-container li:hover {
+    border-color: #00d9ff;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 10px rgba(0, 217, 255, 0.15);
+}
+
+li {
+    list-style: none;
+    position: relative;
+    background: #1e1e1e;
+    color: #fff;
+    padding: 1.2rem;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+}
+
+.copy-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    cursor: pointer;
+    color: #bbb;
+    font-size: 1.2rem;
+    transition: color 0.2s ease;
+}
+
+.copy-btn:hover {
+    color: #00bcd4;
+}
+
+.joke-text {
+    font-size: 1rem;
+    font-weight: 500;
+    margin-bottom: 0.75rem;
+    line-height: 1.4;
+    margin-top: 0.5rem;
+    padding-right: 2rem;
+}
+
+.li-category {
+    font-size: 0.9rem;
+    color: #aaa;
+    text-align: right;
+    font-style: italic;
+    margin-top: 1rem;
+    position: relative;
+}
+
+/* separator line */
+.li-category::before {
+    content: "";
+    position: absolute;
+    top: -0.6rem;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.15);
+}
+
+li p span {
+    background-color: rgba(0, 217, 255, 0.32);
+    padding: .2rem .5rem;
+    font-size: .7rem;
+    border-radius: 0.4rem;
+    color: #fff;
+}
+
+/* SLIDE ANIMATION */
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .nav {
+        flex-direction: row; /* logo + menu same line */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.4rem;
+    }
+
+    /* Vertical filters for mobile */
+    .category, .blacklist {
+        flex-direction: column;
+        align-items: flex-start;
+        flex-wrap: nowrap;
+        overflow: visible;
+        white-space: normal;
+        gap: 8px;
+    }
+
+    .category label,
+    .blacklist label {
+        width: 100%;
+        justify-content: flex-start;
+    }
+}
+
+/*pagination*/
+
+.pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.pagination button {
+    background: rgba(0, 217, 255, 0.15);
+    border: none;
+    color: #00d9ff;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: rgba(0, 217, 255, 0.3);
+}
+
+.pagination button:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+#page-info {
+    font-size: 0.9rem;
+    color: #ffcc00;
+}
