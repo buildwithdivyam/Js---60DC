@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>GitHub User Finder</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <main class="container">
+            <header class="header">
+                <h1><span>GitHub</span> User Finder</h1>
+                <div class="search-bar">
+                    <input
+                        type="text"
+                        id="username"
+                        placeholder="Enter GitHub username... (Ctrl + k)"
+                    />
+                    <button id="search-btn">Search</button>
+                </div>
+            </header>
+
+            <!-- user-info card -->
+            <section class="user-card hidden" id="user-card">
+                <div class="avatar">
+                    <img id="avatar" src="" alt="User avatar" />
+                </div>
+                <div class="user-info">
+                    <h2 id="name">Name</h2>
+                    <p class="username" id="login">@username</p>
+                    <p class="bio" id="bio">Bio goes here...</p>
+
+                    <div class="stats">
+                        <div>
+                            <strong id="followers">0</strong
+                            ><span>Followers</span>
+                        </div>
+                        <div>
+                            <strong id="following">0</strong
+                            ><span>Following</span>
+                        </div>
+                        <div>
+                            <strong id="repos">0</strong><span>Repos</span>
+                        </div>
+                    </div>
+
+                    <p class="joined" id="joined">Joined: --</p>
+                </div>
+            </section>
+        </main>
+
+        <script src="script.js"></script>
+    </body>
+</html>

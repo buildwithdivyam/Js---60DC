@@ -15,6 +15,7 @@ body {
     justify-content: center;
     align-items: flex-start;
     padding: 30px;
+    user-select: none;
 }
 
 /* CONTAINER */
@@ -51,6 +52,13 @@ body {
     cursor: pointer;
     color: #fff;
     display: block; /* visible on all devices */
+    padding: 1px 6px;
+    border-radius: 10px;
+}
+
+.menu:hover {
+    cursor: pointer;
+    background: rgba(0, 217, 255, 0.3);
 }
 
 /* NAV ITEMS (Hidden by default, shown when active) */
@@ -70,7 +78,8 @@ body {
 }
 
 /* CATEGORY + BLACKLIST SECTIONS */
-.category, .blacklist {
+.category,
+.blacklist {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -78,7 +87,8 @@ body {
     padding: 6px 0;
 }
 
-.category h3, .blacklist h3 {
+.category h3,
+.blacklist h3 {
     color: #ffcc00;
     font-size: 1rem;
     white-space: nowrap;
@@ -208,8 +218,8 @@ li:hover {
 
 li p span {
     background-color: rgba(0, 217, 255, 0.32);
-    padding: .2rem .5rem;
-    font-size: .7rem;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.7rem;
     border-radius: 0.4rem;
     color: #fff;
 }
@@ -239,7 +249,8 @@ li p span {
     }
 
     /* Vertical filters for mobile */
-    .category, .blacklist {
+    .category,
+    .blacklist {
         flex-direction: column;
         align-items: flex-start;
         flex-wrap: nowrap;

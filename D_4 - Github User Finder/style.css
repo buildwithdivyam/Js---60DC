@@ -1,0 +1,175 @@
+/* RESET */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* BODY */
+body {
+    min-height: 100vh;
+    background: radial-gradient(circle at top left, #0d1117 0%, #010409 100%);
+    color: #c9d1d9;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 2rem;
+}
+
+/* CONTAINER */
+.container {
+    width: 100%;
+    max-width: 600px;
+    background: #161b22;
+    border-radius: 16px;
+    padding: 2rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.4);
+}
+
+/* HEADER */
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 1.2rem;
+    letter-spacing: 1px;
+}
+
+.header h1 span {
+    color: #58a6ff;
+}
+
+/* SEARCH BAR */
+.search-bar {
+    display: flex;
+    gap: 0.6rem;
+}
+
+.search-bar input {
+    flex: 1;
+    padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 8px;
+    background: #0d1117;
+    color: #c9d1d9;
+    outline: 1px solid #30363d;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.search-bar input:focus {
+    outline: 1px solid #58a6ff;
+    background: #161b22;
+}
+
+.search-bar button {
+    padding: 0.8rem 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background: #238636;
+    color: #fff;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.search-bar button:hover {
+    background: #2ea043;
+}
+
+/* USER CARD */
+.user-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    margin-top: 2rem;
+    background: #0d1117;
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.user-card.hidden {
+    display: none;
+}
+
+/* AVATAR */
+.avatar img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid #58a6ff;
+}
+
+/* USER INFO */
+.user-info {
+    flex: 1;
+}
+
+.user-info h2 {
+    font-size: 1.4rem;
+    color: #fff;
+}
+
+.username {
+    font-size: 1rem;
+    color: #8b949e;
+    margin-bottom: 0.5rem;
+}
+
+.bio {
+    font-size: 0.95rem;
+    color: #c9d1d9;
+    margin-bottom: 1rem;
+}
+
+/* STATS */
+.stats {
+    display: flex;
+    gap: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.stats div {
+    text-align: center;
+}
+
+.stats strong {
+    display: block;
+    font-size: 1.2rem;
+    color: #58a6ff;
+}
+
+.stats span {
+    font-size: 0.8rem;
+    color: #8b949e;
+}
+
+/* JOINED DATE */
+.joined {
+    font-size: 0.85rem;
+    color: #8b949e;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+    .user-card {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .avatar img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .stats {
+        justify-content: center;
+    }
+}
